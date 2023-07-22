@@ -142,7 +142,79 @@
         margin: 5px;
       }
     }
-	
+    
+    /* New styles for the Actions section */
+    .actions {
+      flex: 1;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+    }
+
+    .actions h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .actions p {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .actions ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .actions li {
+      margin-bottom: 10px;
+    }
+
+    .actions a {
+      color: #333;
+      text-decoration: none;
+      background-color: #f0f0f0;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .actions a:hover {
+      background-color: #e0e0e0;
+    }
+
+    .actions form {
+      margin-top: 10px;
+      display: none;
+    }
+
+    .actions label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .actions input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .actions button[type="submit"] {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .actions button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
 </style>  
   
   
@@ -211,11 +283,46 @@ const variable = "Sample text";
 <script type="text/x-smcat"
 src="https://raw.githubusercontent.com/sverweij/state-machine-cat/main/docs/samples/sprint-states.smcat"></script>  
     </div>
+
+    <!-- New section for actions -->
+    <div class="actions">
+      <h2>Actions</h2>
+      <p>Click on the links below to perform the respective actions:</p>
+      <ul>
+        <li><a href="#" onclick="showForm('action1')">Action 1</a></li>
+      </ul>
+
+      <!-- Action 1 form -->
+      <form id="action1Form" onsubmit="completeAction('action1'); return false;">
+        <label for="input1">Input 1:</label>
+        <input type="text" id="input1" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2023 Cambridge University Press & Assessment. All rights reserved.</p>
   </footer>
+
+  <script>
+    // JavaScript functions to handle actions and forms
+    function showForm(action) {
+      const form = document.getElementById(`${action}Form`);
+      form.style.display = 'block';
+    }
+
+    function completeAction(action) {
+      // Add your logic here to process the form data and complete the action
+      const input1Value = document.getElementById('input1').value;
+      alert(`Action "${action}" completed with input: "${input1Value}"`);
+
+      // Hide the form after completing the action
+      const form = document.getElementById(`${action}Form`);
+      form.style.display = 'none';
+    }
+  </script>
+
 </body>
 
 </html>
