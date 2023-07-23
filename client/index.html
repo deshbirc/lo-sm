@@ -232,19 +232,28 @@
     <div class="content">
       <h2>Introduction</h2>
       <p>
-        Welcome to the LO State Machine modeling page. This page is dedicated towards communicating the high-level technical design of the LO State Machine and relevant information for aspects of this state machine. The scope/audience of the document/page is structured to focus on the <mark>consumer facing aspects</mark> of the state machine (and "data on the outside"), rather than the internals (data architecture, implementation of services).
+        Welcome to the LO State Machine modeling page. This page is dedicated towards communicating the high-level technical design
+	of the LO State Machine and relevant information for aspects of this state machine. The scope of the document/page is
+	structured to focus on the <mark>consumer facing aspects</mark> of the state machine (and "data on the outside"), rather than
+	the internals (data architecture, implementation of services).
       </p>
 
       <h2>Learning Object (LO)</h2>
       <p>
-        This is a brief description of section 1. Please refer to the technical documentation for more detailed
-        information.
+       Learning Object (LO) represents a content package (metadata and assets). During its lifecycle its expected to transition through the 
+       following states. 
       </p>
       <pre>
         <code>
-// Sample code block
-function exampleFunction() {
-  return "Hello, world!";
+// LO data model
+LO {
+  Title,
+  Type,
+  Metadata {..}
+  Assets{
+    Source,
+    Published {..}
+  }
 }
         </code>
       </pre>
