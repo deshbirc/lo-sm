@@ -216,10 +216,6 @@
     }
 
  /* New styles for the Definition List */
-    .states {
-      margin-top: 20px;
-    }
-
     .states h2 {
       font-size: 20px;
       margin-bottom: 10px;
@@ -232,7 +228,6 @@
 
     .states dt,
     .states dd {
-      display: inline-block;
       margin: 0;
       font-size: 14px;
     }
@@ -240,10 +235,12 @@
     .states dt {
       font-weight: bold;
       margin-right: 5px;
+      display: inline-block;
     }
 
     .states dd {
       margin-right: 15px;
+      display: block;
     }
 	  
 </style>  
@@ -277,12 +274,12 @@
       <pre>
         <code>
 LO { // LO data model
-  Title,
-  Type,
-  Metadata {..}
-  Assets{
-    Source,
-    Published {..}
+      Title,
+      Type,
+      Metadata {..}
+      Assets{
+         Source,
+         Published {..}
   }</code>
       </pre>
 
