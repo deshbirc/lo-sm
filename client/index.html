@@ -214,6 +214,21 @@
     .actions button[type="submit"]:hover {
       background-color: #0056b3;
     }
+
+    /* New styles for the Definition List */
+    .states {
+      margin-top: 20px;
+    }
+
+    .states dt {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .states dd {
+      margin-bottom: 10px;
+    }
+	  
 </style>  
   
   
@@ -240,12 +255,10 @@
 
       <h2>Learning Object (LO)</h2>
       <p>
-       Learning Object (LO) represents a content package (metadata and assets). During its lifecycle its expected to transition through the 
-       following states. 
+       Learning Object (LO) represents a content package (metadata and assets).
       </p>
       <pre>
-        <code>
-// LO data model
+        <code>// LO data model
 LO {
   Title,
   Type,
@@ -253,11 +266,28 @@ LO {
   Assets{
     Source,
     Published {..}
-  }
-}
-        </code>
+  }</code>
       </pre>
 
+      <p>
+	 During its lifecycle its expected to transition through the following states. 
+      </p>	    
+<!-- Definition List -->
+<div class="states">
+<h2>States/h2>
+<dl>
+  <dt>Created</dt>
+  <dd>LO has been created.</dd>
+  <dt>Validating</dt>
+  <dd>Metatada and asset source are being validated.</dd>
+  <dt>Publishing</dt>
+  <dd>.. </dd>
+  <dt>Published</dt>
+  <dd>.. </dd>
+</dl>
+</div>
+
+	    
       <h2>Publishing</h2>
       <p>
         This is a brief description of section 2. Please refer to the technical documentation for more detailed
